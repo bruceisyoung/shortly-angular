@@ -9,6 +9,10 @@ angular.module('shortly.links', [])
         $scope.data['links'] = links;
       });
   };
-  
+
+  $scope.linkClicked = function(link) {
+    Links.linkClicked(link);
+  };
+
   $scope.getAll();
 });

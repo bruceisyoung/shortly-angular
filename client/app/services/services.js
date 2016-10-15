@@ -26,9 +26,20 @@ angular.module('shortly.services', [])
     }); 
   };
 
+  var linkClicked = function(link) {
+    return $http({
+      method: 'GET',
+      url: '/' + link.code
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
   return {
     getAll: getAll,
-    addOne: addOne
+    addOne: addOne,
+    linkClicked: linkClicked
   };
 
 })
