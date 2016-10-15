@@ -14,13 +14,17 @@ module.exports = {
 
     findUser({username: username})
       .then(function (user) {
+        console.log(user);
         if (!user) {
+          console.log('did not find a user');
           next(new Error('User does not exist'));
         } else {
           return user.comparePasswords(password)
             .then(function (foundUser) {
+              console.log('found a user');
               if (foundUser) {
                 var token = jwt.encode(user, 'secret');
+                console.log('token', token);
                 res.json({token: token});
               } else {
                 return next(new Error('No user'));

@@ -6,19 +6,12 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
-    <h1>Shortly</h1>
+    <h1>Shortly</h1>    
+    <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
 
-    <a href="#/shorten">Shorten</a>
-    <a href="#/links">Links</a>
     <a href="#/signin">Sign In</a>
     <a href="#/signup">Sign Up</a>
-    <!-- the ng-view directive is where our templates will be loaded into when navigated to -->
     <div ng-view></div>
-<!-- 
-    <pre>$location.path() = {{app.$location.path()}} </pre>
-    <pre>$route.current.templateUrl = {{app.$route.current.templateUrl</pre>
-    <pre>$route.current.params = {{app.$route.current.params}}</pre>
-    <pre>$routeParams = {{app.$routeParams}}</pre> -->
 
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
