@@ -1,8 +1,23 @@
-<div id='container' ng-controller='LinksController'>
-  <a href="#/links">Links</a>
-  <a href="#/shorten">Shorten</a>
-  <input type="text" ng-model='search.title'/>
-  <ul>
-    <li ng-repeat='link in data.links | orderBy: "-visits" | filter:search' ng-click='linkClicked(link)'><a href="{{ link.url }}">{{ link.title }}, {{ link.visits }} </li>
+<div id='container'>
+  <div class='navigation' ng-controller='AuthController'>
+    <ul>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+    </ul>
+    <a class='logout' ng-click='signout()'>Logout</a>
+  </div>
+  <div ng-controller='LinksController'>
+  	<ul class='link'>
+	<input type="text" ng-model='search.title'/>
+  	<li ng-repeat='link in data.links | orderBy: "-visits" | filter:search'>
+	  <img src='../assets/redirect_icon.png'/>
+	  <div class='info'>
+	    <div class='visits'><span class='count'>{{ link.visits }}</span>Visits</div>
+	    <div class='title'>{{ link.title }}</div>
+	    <div class='original'>{{ link.url }}</div>
+	    <a href='{{ link.baseUrl }}/{{ link.code }}'>{{ link.baseUrl }}/{{ link.code }}</a>
+	  </div>
+  	</li>
   </ul>
+  </div>
 </div>

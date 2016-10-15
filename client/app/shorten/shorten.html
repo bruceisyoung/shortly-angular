@@ -1,12 +1,18 @@
-<div ng-controller='ShortenController' id='container'>
-  <h1>Shorten Links</h1>
-  <a href="#/shorten">Shorten</a>
-  <a href="#/links">Links</a>
-  <form name="shortenLinks" ng-submit='addLink()'>
-    <input type="text" ng-change='checkUrl()' ng-model='newLink'/>
-    <button>add a new link</button>
-  </form>
-  <p> {{ isValid }}</p>
+<div id='container'>
+  <div class='navigation' ng-controller='AuthController'>
+    <ul>
+      <li><a href='#/links' class='index'>All Links</a></li>
+      <li><a href='#/shorten' class='create'>Shorten</a></li>
+    </ul>
+    <a class='logout' ng-click='signout()'>Logout</a>
+  </div>
+  <div ng-controller='ShortenController'>
+	<form name="shortenLinks" ng-submit='addLink()'>
+	  <input type="text" ng-change='checkUrl()' ng-model='newLink'/>
+	  <button>add a new link</button>
+	</form>
+	<p> {{ isValid }}</p>
+  </div>
 </div>
 
 

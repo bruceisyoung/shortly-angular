@@ -31,7 +31,7 @@ h1 {
   float: left;
 }
 
-.navigation li a {
+.navigation li a, .logout {
   width: 100px;
   height: 20px;
   line-height: 20px;
@@ -46,6 +46,10 @@ h1 {
 
 .navigation li a.selected {
   background-color: #ccc;
+}
+
+.navigation .logout {
+  float: right;
 }
 
 #container {
@@ -91,6 +95,7 @@ h1 {
 
 .link .info {
   margin-left: 55px;
+  margin-bottom: 4px;
 }
 
 form {

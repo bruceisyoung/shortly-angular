@@ -55,12 +55,13 @@ module.exports = {
   },
 
   navToLink: function (req, res, next) {
+    console.log('receive request once');
     findLink({code: req.params.code})
       .then(function (link) {
         if (!link) {
           return next(new Error('Link not added yet'));
         }
-
+        console.log(link.visits);
         link.visits++;
         link.save(function (err, savedLink) {
           if (err) {

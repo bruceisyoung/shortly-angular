@@ -39,6 +39,10 @@ angular.module('shortly.auth', [])
     }
   };
 
+  $scope.signout = function() {
+    Auth.signout();
+  };
+
   $scope.isValidUsername = function() {
     return !$scope.user.username.match(/\W/);
   };
